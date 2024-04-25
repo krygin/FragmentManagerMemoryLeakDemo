@@ -13,7 +13,13 @@
 
 ### Activity
 ```kotlin
-class MainActivity: AppCompatActivity(R.layout.activity_main)
+class MainActivity: AppCompatActivity(R.layout.activity_main) {
+    
+    override fun onDestroy() {
+        findViewById<WebView>(R.id.webView).destroy()
+        super.onDestroy()
+    }
+}
 ```
 
 ### Android Manifest
